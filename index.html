@@ -13,7 +13,53 @@
         <![endif]-->
     </head>
     <body>
-        
+        <!--I struggled with autoplay feature then I found a solution to use the iframe with silent audio-->
+        <iframe src="assets/sounds/silence.wav" allow="autoplay" id="audio" style="display:none"></iframe>
+        <audio id="myVideo" autoplay loop>
+            <source src="assets/sounds/GameofThrones.mp3" type="audio/mp3">
+            <p>Your browser doesn't support HTML5 audio.</p>
+        </audio>
+
+        <!--Page Main Container-->
+        <div class="container">
+            <!--Start Header-->
+            <header>
+                <div class="logo">
+                   <img src="assets/images/logo.jpg" alt="logo">
+                </div>
+            </header>
+            <!--End Header-->
+    
+            <!--Start Content-->
+            <div class="content">
+                <div class="sidebar"></div>
+                <div class="border">
+                    <div id="instructions" class="mainContent">
+                        <!--Contenet displayed before starting the game-->
+                        <h2> Game Instructions:</h2>
+                        <ul>
+                            <li>Keep an eye to the bottom of the page.</li><br>
+                            <li>Once you click on any button, an image will appear here.</li><br>
+                            <li>Try to guess the name of the movie the image snapped of.</li><br>
+                            <li>You can try up to nine guesses.</li><br>
+                            <li>You can guess a letter only once.</li><br>
+                            <li>If you guess all the letters, you will win.</li><br>
+                            <li>If you used all of your nine guesses without a match you will lose.</li>
+                        </ul>
+                        <h1>Ready? Press any key to start ... </h1>
+                        <progress id="elem"></progress>
+                    </div>
+                </div>
+            </div>
+            <!--End Content-->
+                
+            <!--Start Footer-->
+            <footer>
+                <div class="info"></div>
+                <div class="copyright">Copyright &copy;</div>
+            </footer>
+            <!--End Footer-->
+        </div>
         <!--Main JS file-->
         <script src="assets/javascript/game.js"></script>
     </body>
