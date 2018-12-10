@@ -19,7 +19,7 @@
             <source src="assets/sounds/GameofThrones.mp3" type="audio/mp3">
             <p>Your browser doesn't support HTML5 audio.</p>
         </audio>
-
+        
         <!--Page Main Container-->
         <div class="container">
             <!--Start Header-->
@@ -32,7 +32,23 @@
     
             <!--Start Content-->
             <div class="content">
-                <div class="sidebar"></div>
+                <div class="sidebar">
+                    <!--Hidden part of the game that will be displayed when the game starts-->
+                    <div id="sideBar_hidden">
+                        <h3>Guess Where Am I From?</h3>
+                        <!--Paragraph block to display the number of wrong guesses (Losses)-->
+                        <p>Wrong Guesses: <span id="wrongGuesses"></span></p>
+                        <!--Paragraph block to display the number of right guesses (Wins)-->
+                        <p>Right Guesses: <span id="rightGuesses"></span></p>
+                        <!--Paragraph block to display the number of remaining guesses (out of 9 guesses)-->
+                        <p>Total Guesses: <span id="totalGuesses"></span></p>
+                        <!--Paragraph block to display the right guessed letters (movie name)-->
+                        <P id="movieGuessedName"></P>
+                        <!--Paragraph block to display the wrong guessed letters-->
+                        <P>Wrong Guessed Letters ...</P>
+                        <p id="wrongGuessedLetters"></p>
+                    </div>
+                </div>
                 <div class="border">
                     <div id="instructions" class="mainContent">
                         <!--Contenet displayed before starting the game-->
@@ -46,8 +62,9 @@
                             <li>If you guess all the letters, you will win.</li><br>
                             <li>If you used all of your nine guesses without a match you will lose.</li>
                         </ul>
-                        <h1>Ready? Press any key to start ... </h1>
-                        <progress id="elem"></progress>
+                        <!--Progress bar to click on to start the game-->
+                        <h1>Ready? Click the bar to start ... </h1>
+                        <progress id="elem" onmousedown="startGame()"></progress>
                     </div>
                 </div>
             </div>

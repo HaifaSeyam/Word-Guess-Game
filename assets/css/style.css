@@ -51,12 +51,33 @@ progress {
     position: relative;
     left: 20%;
   }
+.content #sideBar_hidden {
+    display: none;
+}
+.content #sideBar_hidden #movieGuessedName {
+    text-align: center;
+    margin-left: 0px;
+}
+.content #sideBar_hidden #wrongGuessedLetters {
+    text-align: center;
+    margin-left: 0px;
+    color: red;
+}
 .content .sidebar {
     float: right;
     width: 27%;
     height: 492px;
     background-color: khaki;
+    font-family: "Comic Sans MS";
     border: 4px dashed black;
+}
+.content .sidebar h3 {
+    text-align: center;
+    color: red;
+}
+.content .sidebar p {
+    margin-left: 10px;
+    font-size: 18px;
 }
 /*End content*/
 
@@ -69,12 +90,12 @@ footer .info {
     height: 100px;
     background-color: #676767;
 }
-
 footer .copyright {
     height: 20px;
     text-align: center;
 }
 /*End footer*/
+
 
 
 /* Responsiveness to be added later
