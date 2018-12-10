@@ -88,11 +88,21 @@ footer {
 }
 footer .info {
     height: 100px;
-    background-color: #676767;
+    background-color: khaki;
+    margin-top: 2px;
+    border: 4px dashed black;
+}
+footer .info p {
+  color: red;
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
 }
 footer .copyright {
-    height: 20px;
-    text-align: center;
+  height: 20px;
+  text-align: center;
+  border: 1px solid black;
 }
 /*End footer*/
 
