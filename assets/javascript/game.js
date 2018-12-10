@@ -98,15 +98,20 @@ function startGame() {
        //play the sound of pressing on the letter
        pressSound.play();
        //Call a function to check if it is a valid character
-       if(chechIsValidLetter(event.key)){
+          if(chechIsValidLetter(event.key)){
           /*If it is a valid character then call a function to:
           - check the letter if it is matching any letter of the movie name
           - if yes then display it as right guess into the html document (screen)
-          - if no the display it as wrong guess into the html document (screen)*/
-          if (isMatching(event.key)) {displayIsMatching(event.key);}
-          else {displayIsNotMatching(event.key)}
+          - if no then display it as wrong guess into the html document (screen)*/
+          if (isMatching(event.key) && totalGuessesCounter > 0) {displayIsMatching(event.key);}
+          else {
+             if (totalGuessesCounter > 0) {
+                displayIsNotMatching(event.key);
+               }
+            }
        } else {//if it is not a valid character display a message into the footer
-          alertMsg.innerHTML = "Not a valid letter ... click anywhere to start again";
+          alertMsg.innerHTML = "Not a valid letter ... Try again!!";
+          restartGame();
        }
     });
 }
@@ -175,11 +180,14 @@ k = 0;
 l = 0;
 }
 
-//Check if game need to be restarted
-function restartGame(){
-      clearAllFields();
-      x.style.display = "block";
-      y.style.display = "none";
-      startGame();
+/*Function to restart the game with a timer of one second.
+Timer was set initially to overcome a problem of minus counter but then I liked it although that 
+problem has been solved*/ 
+function restartGame() {
+   setTimeout(function () {
+   clearAllFields();
+   x.style.display = "block";
+   y.style.display = "none";
+   startGame();
+}, 1000);
 }
-
